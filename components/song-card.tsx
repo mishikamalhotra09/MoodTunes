@@ -1,15 +1,15 @@
 "use client"
 
-//creates song cards after gathering songs
+//
 
 import { Button } from "@/components/ui/button"
 import { Music, Play, Pause, Loader2 } from "lucide-react"
 import { useMusicPlayer } from "@/contexts/music-player-context"
 
-//keeps organized
+//
 
 
-//always have using ai
+//
 interface Song {
   title: string
   artist: string
@@ -36,7 +36,7 @@ export function SongCard({ song, index, songs }: SongCardProps) {
       playSong(song, index)
     }
   }
-//being created
+//
   return (
     <div className="p-4 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-all duration-200 transform hover:scale-105">
       <div className="flex items-start gap-4">

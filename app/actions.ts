@@ -17,8 +17,8 @@ const MoodAnalysisSchema = z.object({
   ),
 })
 
-//takes strings and returns vids (songs) using yt google api
-//if no yt google api availabe, use hardcoded vids
+//
+
 async function searchYouTubeVideo(query: string): Promise<string | null> {
   try {
     const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY
@@ -82,7 +82,6 @@ const getMockResponse = async (text: string) => {
       { title: "Black", artist: "Pearl Jam", reason: "Raw expression" },
       { title: "The Night We Met", artist: "Lord Huron", reason: "Lost love" },
     ],
-    // etc...
   }
 
   const songs = mockSongs[mood] || mockSongs.happy
@@ -105,7 +104,7 @@ const getMockResponse = async (text: string) => {
   console.log(`[Mock Data] Final mock result:`, mockResult)
   return mockResult
 }
-//actual ai call/code
+//
 export async function analyzeMoodAndRecommendSongs(text: string) {
   const apiKey = process.env.OPENAI_API_KEY
 

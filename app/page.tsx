@@ -35,7 +35,7 @@ import { MusicPlayer } from "@/components/music-player"
 import { SongCard } from "@/components/song-card"
 import { PlayAllButton } from "@/components/play-all-button"
 
-//used to tell ai wht format data we want
+//
 interface MoodAnalysis {
   mood: string
   intensity: number
@@ -56,8 +56,7 @@ export default function MoodMusicApp() {
   const [copySuccess, setCopySuccess] = useState(false)
   const [isDemoMode, setIsDemoMode] = useState(false)
 
-//called when user enters text
-//calls long method
+//
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -65,7 +64,7 @@ export default function MoodMusicApp() {
 
     startTransition(async () => {
       setError("")
-      //go to method
+      //
       const result = await analyzeMoodAndRecommendSongs(text)
 
       if (result.success) {
@@ -77,7 +76,7 @@ export default function MoodMusicApp() {
     })
   }
 
-  //depending on social, shares to it
+  //
   const handleShare = async (platform: string) => {
     if (!analysis) return
 
@@ -126,7 +125,7 @@ export default function MoodMusicApp() {
     }
   }
 
-  //talk abt this --> returns color based on mood
+  //
   const getMoodColor = (mood: string) => {
     const moodColors: Record<string, string> = {
       happy: "from-yellow-400 to-orange-500",
@@ -169,7 +168,9 @@ export default function MoodMusicApp() {
             </p>
           </div>
 
-{/*where user enters feelin*/}
+
+{/**/}
+
 
           {/* Input Form */}
           <Card className="max-w-2xl mx-auto mb-8 bg-white/10 backdrop-blur-lg border-white/20">
@@ -213,7 +214,8 @@ export default function MoodMusicApp() {
             </CardContent>
           </Card>
 
-{/*returns data*/}
+{/*
+*/}
 
           {/* Results */}
           {analysis && (
@@ -264,7 +266,7 @@ export default function MoodMusicApp() {
               </Card>
 
 
-{/*talks abt this --> shows playlist*/}
+{/**/}
 
 
               {/* Song Recommendations */}
